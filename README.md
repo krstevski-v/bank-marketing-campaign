@@ -12,22 +12,23 @@ This project looks at telemarketing data from a bank's marketing campaign to ans
 ## 2. Data
 
 ### Dataset Overview
-
-<details>
   
+This project analyzes a direct marketing campaign by a Portuguese retail bank to promote term deposit subscriptions among existing clients.
 
-This project analyzes a direct marketing campaign from a Portuguese retail bank aimed at promoting **term deposit subscripions** among the existing client base.
+The dataset contains **45211** records, each representing one telemarketing contact, covering:
 
-The dataset comprises of **45211** individual records, with each entry representing a specific telemarketing contact. The data provides a comprehensive view of three key areas: **client demographics**(age, occupation, marital status, educational background), **financial profile**(balance, credit defaults, outstanding loans), and **campaign logistics**(communication channel, timing, call duration).
+* Client demographics: age, occupation, marital status, education
+* Financial profile: balance, credit defaults, outstanding loans
+* Campaign logistics: communication channel, timing, call duration
 
-While the dataset was structurally sound with no duplicate entries, several attributes such as Job, Education and Contact Type contained unknown values. These records were intentionally retained rather than discarded to ensure a more robust sample size.
+The data had no duplicates. Unknown values in Job, Education, and Contact Type were retained to preserve sample size.
 
-To enhance the analytical depth, the data was enriched with three new attributes:
-  1. **Job Type**: Classified clients into **Blue Collar, White Collar, Not in Labor Force, or Unknown** based on job status
-  2. **Balance Group**: Classified clients into **Above Median or Below Median** based on the client median balance.
-  3. **Age Group**: Segmented clients into 5 distinct groups based on their age.
+Three attributes were added to deepen the analysis:
 
-</details>
+1. Job Type: Blue Collar, White Collar, Not in Labor Force, or Unknown
+2. Balance Group: Above or Below the median client balance
+3. Age Group: five age segments
+
 
 ## 3. Analysis & Insights
 
@@ -37,15 +38,13 @@ The overall cross-sell rate for the campaign is **11,7%** - which means that **5
 
 ### B. Which client segments contribute most to the overall cross-sell share? Which client segments have the biggest cross-sell rate?
 
-<details>
 
 <img width="1157" height="883" alt="image" src="https://github.com/user-attachments/assets/fee33a5a-ec67-4af4-97f0-abb73b4add26" />
   
-</details>
 
 ### C. How does cross-sell success vary by timing?
 
-<details>
+
 
 By day of month:
 
@@ -58,11 +57,9 @@ By quarter:
 <img width="403" height="233" alt="image" src="https://github.com/user-attachments/assets/2f8b4003-19f6-42c8-b60d-5cbd3f252658" />
 
 
-</details>
 
 ### D. How does cross-sell success vary by customer engagement?
 
-<details>
   
 By number of contacts:
 
@@ -81,28 +78,13 @@ By call duration:
 <img width="404" height="230" alt="image" src="https://github.com/user-attachments/assets/8b81072e-60c1-4b8d-9d6b-358fa3c7a998" />
 
 
-</details>
+## 4. Conclusions
 
-## 4. Conclusions & Recommendations
+* **Volume vs. Efficiency:** Clients aged 30-44 drive volume with a 46% contribution share, while clients 60+ have the highest cross-sell rates.
+* **Affluence:** Clients with above-median balances account for 61% of successful subscriptions, with a 14% cross-sell rate.
+* **Job Type:** White-collar clients outperform blue-collar clients in both volume and efficiency. Clients not in the labor force (retirees, students) have the highest cross-sell rate (22%) despite smaller volume.
+* **Timing:** Outreach in the first five days of the month and during Q1 or Q4 had the highest success rates (15-18%).
+* **Contact Frequency:** Effectiveness peaks within the first three contacts and drops sharply afterward, reaching 0% after 33 attempts, which points to customer fatigue.
+* **Prior Campaign Outcome:** A strong lead-scoring signal. Clients who accepted a previous offer converted at 65%, versus 13% for those who declined.
+* **Call Duration:** Calls under 5 minutes rarely convert (6%), and calls over 80 minutes have 0% success. The sweet spot is 20-35 minutes (63% success).
 
-Based on the data presented in the charts and tables of the previous sections, we can draw the following conclusions:
-
-* **Volume vs. Efficiency Gap**: Clients aged 30-44 have the highest contribution share at 46%, acting as the campaign's volume driver. Older customers(60+) have significantly higher cross-sell rates, making them the most efficient segment.
-* **Affluence as a Predictor**: Financial health is a driver of success; clients with above-median balances account for 61% of all successful subscriptions with a 14% cross-sell rate.
-* **Professional Segmentation**: White-collar clients outperform blue-collar clients in both volume and efficiency. Interestingly, those not in the labot force (retirees, students) provide the highest cross-sell rate(22%), despite their smaller total volume.
-* **Optimal Timing**: Outreach in the first five days of the month and during Q1 or A4 yielded the highest success rates(15-18%).
-* **Diminishing returns on Contact**: Effectiveness peaks within the first three contacts. Success drops sharply as contact frequency increases, reaching 0% after 33 attempts, suggesting a clear point of customer fatigue.
-* **Historical Momentum**: Prior campaign disposition is a powerful lead-scoring metric. Clients who accepted a previous offer showed a 65% cross-sell rate, compared to only 13% for those who previously declined.
-* **Golden window of Duration**: Calls under 5 minutes rarely convert(6%), and calls over 80 minutes have a 0% success rate. The sweet spot for conversion lies between 20 and 35 minutes(63% success).
-
-Recommendations:
-
-The following strategic adjustmetns are recommended to optimize future cross-sell campaigns:
-
-1. **Prioritize "Warm" Leads**: Future campaigns should first target clients who have accepted offers in the past. Due to their high conversion rate, this segment should be prioritized before cold-calling the broader base to ensure a high early-campaign ROI.
-
-2. **Implement a Contact Cap**: To preserve brand reputation and reduce campaign cost, outreach should be stopped after the 5th unsuccessful attempt. The data shows that after this point, the likelihood of conversion is marginal and does not justify the operational cost.
-
-3. **Improve Scripts**: Sales training should focus on moving clients past the 5 minute mark. Scripts should be designed to build enough value to reach the 20-minute threshold, where the probability of a "Yes" increases tenfold.
-
-4. **Balance-Based Leads:** Use the Above-Median balance flag as a primary filter for lead assignment. High-balance clients represent 61% of total potential revenue and should be assigned to the most experienced sales agents.
